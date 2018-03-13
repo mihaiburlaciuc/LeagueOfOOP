@@ -1,0 +1,35 @@
+Toate clasele folosite in tema sunt in pachetul main.
+
+Executia programului incepe in clasa Main, unde se citesc datele date.
+Aceste data sunt salvate in vectori si transmise ca parametrii clasei Game,
+care se ocupa de joc in sine, itereaza prin runde; verifica daca doi eroi sunt
+pe aceeasi pozitie, daca sunt efectueaza o batalie; aplica damage-ul overtime.
+
+Clasa Map reprezinta harta cu tipurile de teren.
+
+Clasa Hero este o clasa abstracta ce contine majoritatea informatiilor despre
+eroi: HP-ul total, HP-ul curent, cresterea HP-ului odata cu nivelul, nivelul
+curent, XP-ul, pozitia pe harta, terenul preferat pentru modificator,
+modifcatorul, abilitatea overtime ce poate fi efectuata asupra lui.
+
+Clasa Modifier retine 4 variabile ce reprezinta modficatorii de rasa.
+
+Interfata Ability are rolul de a specifica un comportament fiecarei abilitati
+ale eroilor in parte: actiunea pe care o efectueaza in timpul luptei,
+actiunea pe care o efectueaza overtime, returnarea damage-ului dat unui erou
+fara modificatori de rasa.
+
+Clasele Knight, Rogue, Pyromancer si Wizard extind clasa Hero si initializeaza
+eroii cu datele oferite de problema.
+
+Clasele Fireblast si Ignite implementeaza abilitatile Pyromancer-ului.
+Clasele Execute si Slam implementeaza abilitatile Knigh-ului.
+Clasele Paralysis si Backstab implementeaza abilitatile Rogue-ului.
+Clasele Deflect si Drain implementeaza abilitatile Wizard-ului.
+
+BONUS:
+Double Dispatch-ul este implementat in cadrul claselor care au abilitati
+overtime, precum Paralysis, Slam sau Ignite. Astfel, in metoda 'action' atribuim
+eroului inamic o abilitatea overtime prin functia 'setOvertimeAbility' si pentru
+a trimite aceasta abilitate eroului ii dam ca parametru functiei instanta
+abilitatii in care ne aflam prin 'this'.
